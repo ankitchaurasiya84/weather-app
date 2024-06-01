@@ -7,7 +7,7 @@ export const WeatherAPI = () => {
   const [error, setError] = useState(null);
   const fetchWeather = async (city) => {
     try {
-      const API_KEY = "57224f5df62c83b3bf379411eb85c513";
+      const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       );
